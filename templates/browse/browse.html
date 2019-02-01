@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block header %}
+    <div class="searchbar">
+    <form method="get">
+        <input type="search" name="search" value="{{ request.form.search }}" required/>
+        <input type="button" formaction="submit" value="Search"/>
+    </form>
+    </div>
+{% endblock %}

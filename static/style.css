@@ -1,0 +1,13 @@
+.wrap {
+    background-color: #505050;
+    color: white;
+    background-size: cover;
+}
+
+.nav {
+    float: left;
+    margin: 0px 95% 0px 0px;
+    height: auto;
+    width: 5%;
+    background-color: aqua;
+}
