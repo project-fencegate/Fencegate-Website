@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+    {% block title %}{% endblock %} - Fencegate
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav class="nav">
+    <h1>Fencegate</h1>
+    <ul>
+        {% if g.user %}
+            <li><span>{{ g.user['username'] }}</span>
+            <li><a href="{{ url_for('hello_world') }}">Log Out</a>
+                {% else %}
+            <li><a href="{{ url_for('hello_world') }}">Register</a>
+            <li><a href="{{ url_for('hello_world') }}">Log In</a>
+        {% endif %}
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>
+</html>
