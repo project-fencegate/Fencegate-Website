@@ -8,3 +8,9 @@ db_name = "fencegate"
 db = pymysql.connect("localhost:" + port, user, pw, db_name)
 
 cursor = db.cursor()
+
+
+def create_user(username, password):
+    cursor.execute(
+        ""
+    )
